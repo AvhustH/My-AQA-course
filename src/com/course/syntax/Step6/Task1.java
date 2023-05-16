@@ -1,15 +1,15 @@
 package com.course.syntax.Step6;
 
-import java.util.Arrays;
-
 public class Task1 {
     public static void main(String[] args) {
 
- int [] test = {10,15,10,100};
- float sum = Arrays.stream(test).sum();
- float length = test.length;
- float result = sum/length;
- System.out.println(result);
+        String testText = "Text1 test2 text3";
+        String withoutSpase = testText.replace(" ", "");
+        String toUpper = withoutSpase.toUpperCase();
+        int i;
+        for (i = 0; i < toUpper.length(); i++) {
+            System.out.println(toUpper.charAt(i));
+        }
     }
 }
 

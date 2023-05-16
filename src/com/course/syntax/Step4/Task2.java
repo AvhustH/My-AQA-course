@@ -4,7 +4,7 @@ import java.util.Scanner;
 
 public class Task2 {
     public static int calculateFactorial() {
-        System.out.print("Введіть число від 1 до 10 для визначення факторіала : ");
+        System.out.print("Введіть число для визначення факторіала : ");
         Scanner scan = new Scanner(System.in);
         int number = scan.nextInt();
         int result = 1;

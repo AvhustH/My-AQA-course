@@ -1,17 +1,48 @@
-//package com.course.syntax.Step7OOP;
-//
-//public class TestStepOOP {
-//    public static void main(String[] args) {
-//User firstUser = new User("first","last","adsas@adwawd.com","qa");
-//firstUser.printUserInfo();
-//
-//        public static void main(String args[]) {
-//            String line = "Good morning";
-//            boolean b1 = line.startsWith();
-//            boolean b2 = line.endsWith("evening");
-//            System.out.println("String " + line + " ends with 'morning'?  " + b1);
-//            System.out.println("String " + line + " ends with 'evening'?  " + b2);
-//        }
-//    }
-//    }
-//}
+package com.course.syntax.Step7OOP;
+
+import java.util.Objects;
+import java.util.Scanner;
+
+public class TestStepOOP {
+    public static void main(String[] args) {
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Your first name");
+        String firstName = sc.nextLine();
+        System.out.println("Your last name");
+        String secondName = sc.nextLine();
+        System.out.println("Email");
+        String email = sc.nextLine();
+        System.out.println("Role");
+        Role role1 = new Role(false, false, false, false);
+        String role = sc.nextLine();
+        if (Objects.equals(role, "Admin")) {
+            role1 = new Role(true, true, true, true);
+        } else if (Objects.equals(role, "Viewer ")) {
+            role1 = new Role(true, false, false, false);
+        } else if (Objects.equals(role, "Customer")) {
+            role1 = new Role(true, false, true, false);
+        } else if (Objects.equals(role, "Main Customer")) {
+            role1 = new Role(true, true, true, false);
+        }
+        System.out.print("Number: ");
+        Scanner scan = new Scanner(System.in);
+        String phoneNumber = scan.nextLine();
+        String plus = "+";
+        if (phoneNumber.charAt(0) != plus.charAt(0)) {
+            while (true) {
+                System.out.println("Number should start by +");
+                Scanner newScan = new Scanner(System.in);
+                String newPhoneNumber = newScan.nextLine();
+                if (newPhoneNumber.charAt(0) == plus.charAt(0)) {
+                    phoneNumber = newPhoneNumber;
+                    break;
+                }
+            }
+        }
+
+        User firstUser = new User(firstName, secondName, email, role);
+        firstUser.setPhoneNumber(phoneNumber);
+
+    }
+}
+

@@ -4,14 +4,13 @@ import java.util.Scanner;
 
 public class Task4 {
     public static void main(String[] args) {
-        int old;
-        for (old = 5; old > 3; old++) {
+        while (true) {
             System.out.print("Введіть ваш вік: ");
             Scanner scanOld = new Scanner(System.in);
-            int old2 = scanOld.nextInt();
-            if (old2 >= 140) {
+            int old = scanOld.nextInt();
+            if (old >= 140) {
                 System.out.println("Вік не вірний.");
-            } else if (old2 <= 0) {
+            } else if (old <= 0) {
                 System.out.println("Вік не вірний.");
             } else {
                 System.out.println("Ваш вік правильний");

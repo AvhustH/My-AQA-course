@@ -6,15 +6,15 @@ import java.util.stream.IntStream;
 
 public class Task3 {
     public static void main(String[] args) {
-        int[] listOfNumber = {34, 125, 3,126, 7};
-        int max = listOfNumber[0];
+        int[] listOfNumber = {56, 92, 3, 8, 15};
+        int biggestNumberFromList = listOfNumber[0];
         int i;
         for (i = 1; i < listOfNumber.length; i++) {
-            if (listOfNumber[i] > max) {
-                max = listOfNumber[i];
+            if (listOfNumber[i] > biggestNumberFromList) {
+                biggestNumberFromList = listOfNumber[i];
             }
         }
-        System.out.println(max);
+        System.out.println(biggestNumberFromList);
     }
 }
 

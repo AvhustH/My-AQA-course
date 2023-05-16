@@ -1,10 +1,8 @@
 package com.course.syntax.Step1;
 
-public class Task1  {
+public class Task1 {
 
-    public static void main(String[] args)
-
-    {
+    public static void main(String[] args) {
         byte numbByte = 127;
         short numbSort = 32767;
         int numbInt = 10;
