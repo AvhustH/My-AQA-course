@@ -1,4 +1,4 @@
-package com.course.syntax.Step7OOP;
+package oop.Step7OOP;
 
 public class Role {
     private final boolean viewAll;
