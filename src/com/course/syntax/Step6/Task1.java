@@ -6,9 +6,8 @@ public class Task1 {
         String testText = "Text1 test2 text3";
         String withoutSpase = testText.replace(" ", "");
         String toUpper = withoutSpase.toUpperCase();
-        int i;
-        for (i = 0; i < toUpper.length(); i++) {
-            System.out.println(toUpper.charAt(i));
+        for (char k : toUpper.toCharArray()) {
+            System.out.println(k);
         }
     }
 }

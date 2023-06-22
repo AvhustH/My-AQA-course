@@ -3,14 +3,23 @@ package oop.Step7OOP;
 import java.util.Arrays;
 import java.util.Random;
 
-public class Cart {
+import static java.lang.Integer.parseInt;
+
+public class Card {
     private int id;
-    private int[] number;
+    private int number;
     private int[] expireDate;
     private int[] cvv;
     private String[] cardType;
 
-    Cart(int[] number, int[] expireDate, int[] cvv, String[] cardType) {
+    private Card() {
+    }
+
+    public static int parseCard(String s) throws NumberFormatException {
+        return parseInt(s,10);
+    }
+
+    private Card(int number, int[] expireDate, int[] cvv, String[] cardType) {
         this.number = number;
         this.expireDate = expireDate;
         this.cvv = cvv;
@@ -26,7 +35,7 @@ public class Cart {
 
     }
 
-    public void setNumber(int[] number) {
+    public void setNumber(int number) {
         this.number = number;
     }
 
@@ -42,7 +51,7 @@ public class Cart {
         this.cardType = cardType;
     }
 
-    public int[] getNumber() {
+    public int getNumber() {
         return number;
     }
 

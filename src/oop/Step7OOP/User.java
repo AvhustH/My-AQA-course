@@ -10,27 +10,28 @@ public class User {
     private String phoneNumber;
     private String billingAddress;
     private String deliveryAddress;
-    private String cards;
+    private long cards;
     private String role;
     private String manager;
-    private int userId;
+    private static int userId;
 
     User(String firstName, String lastName, String email, String role) {
+        userId = 0;
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
         this.role = role;
-        Random random = new Random();
-        this.userId = random.nextInt();
+        userId++;
     }
 
     User(String fullName, String email, String role) {
         this.fullName = fullName;
         this.email = email;
         this.role = role;
-        String[] bufer = fullName.split(" ");
-        this.firstName = bufer[0];
-        this.lastName = bufer[1];
+        String[] buffer = fullName.split(" ");
+        this.firstName = buffer[0];
+        this.lastName = buffer[1];
+        userId++;
     }
 
     @Override
@@ -64,7 +65,11 @@ public class User {
         this.deliveryAddress = deliveryAddress;
     }
 
-    public void setCards(String cards) {
+    public void setCards(long cards) throws CartException { //Task 1
+        double x = Math.ceil(Math.log10(cards));
+        if (x != 16) {
+            throw new CartException("Cart incorrect");
+        }
         this.cards = cards;
     }
 
@@ -100,7 +105,7 @@ public class User {
         return deliveryAddress;
     }
 
-    public String getCards() {
+    public long getCards() {
         return cards;
     }
 

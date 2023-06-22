@@ -6,7 +6,7 @@ public class Manager extends User {
     private String responsibilityDistrict;
     private String workPhoneNumber;
 
-    Manager(String firstName, String lastName, String email, String role, String position, String responsibilityDistrict,
+    private Manager(String firstName, String lastName, String email, String role, String position, String responsibilityDistrict,
             String workPhoneNumber) {
         super(firstName, lastName, email, role);
         this.position = position;
@@ -14,7 +14,7 @@ public class Manager extends User {
         this.workPhoneNumber = workPhoneNumber;
     }
 
-    Manager(String fullName, String email, String role, String position, String responsibilityDistrict,
+    private Manager(String fullName, String email, String role, String position, String responsibilityDistrict,
             String workPhoneNumber) {
         super(fullName, email, role);
         this.position = position;

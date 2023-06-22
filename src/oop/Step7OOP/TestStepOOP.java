@@ -1,10 +1,14 @@
 package oop.Step7OOP;
 
+import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
+import static oop.Step7OOP.RoleType.ADMIN;
+import static oop.Step7OOP.RoleType.CUSTOMER;
+
 public class TestStepOOP {
-    public static void main(String[] args) {
+    public static void main(String[] args) throws CartException {
         Scanner sc = new Scanner(System.in);
         System.out.println("Your first name");
         String firstName = sc.nextLine();
@@ -19,11 +23,12 @@ public class TestStepOOP {
             role1 = new Role(true, true, true, true);
         } else if (Objects.equals(role, "Viewer ")) {
             role1 = new Role(true, false, false, false);
-        } else if (Objects.equals(role, "Customer")) {
-            role1 = new Role(true, false, true, false);
-        } else if (Objects.equals(role, "Main Customer")) {
+        }  else if (Objects.equals(role, "Main Customer")) {
             role1 = new Role(true, true, true, false);
+        }else if (Objects.equals(role, "Customer")) {
+            role1 = new Role(true, false, true, false);
         }
+
         System.out.print("Number: ");
         Scanner scan = new Scanner(System.in);
         String phoneNumber = scan.nextLine();
@@ -42,7 +47,17 @@ public class TestStepOOP {
 
         User firstUser = new User(firstName, secondName, email, role);
         firstUser.setPhoneNumber(phoneNumber);
+        System.out.println("Number of cart: ");
+        long cartNumber = Long.parseLong(scan.nextLine());
 
+        try { //Task2
+            firstUser.setCards(cartNumber);
+        }catch (CartException e){
+            System.err.println(e.getMessage());
+        }
+
+//Parent testparent = new Parent("testonme",12);
+//NewParent testNewParent = new NewParent("testMe",14);
     }
 }
 
