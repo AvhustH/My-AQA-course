@@ -1,6 +1,6 @@
 package oop.Step7OOP;
 
-public class Manager extends User {
+public class Manager  extends User implements PrintInfo{
 
     private String position;
     private String responsibilityDistrict;
@@ -55,7 +55,9 @@ public class Manager extends User {
                 '}';
     }
 
-    public void printManager() {
+    @Override
+    public String printInfo(){
         System.out.println(toString());
+        return null;
     }
 }

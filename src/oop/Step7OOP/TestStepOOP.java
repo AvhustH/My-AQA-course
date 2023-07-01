@@ -1,11 +1,9 @@
 package oop.Step7OOP;
 
-import java.io.IOException;
 import java.util.Objects;
 import java.util.Scanner;
 
-import static oop.Step7OOP.RoleType.ADMIN;
-import static oop.Step7OOP.RoleType.CUSTOMER;
+import static oop.Step7OOP.RoleType.*;
 
 public class TestStepOOP {
     public static void main(String[] args) throws CartException {
@@ -19,14 +17,16 @@ public class TestStepOOP {
         System.out.println("Role");
         Role role1 = new Role(false, false, false, false);
         String role = sc.nextLine();
-        if (Objects.equals(role, "Admin")) {
+        RoleType usersRole = RoleType.valueOf(role);
+        if (Objects.equals(usersRole, ADMIN)) {
             role1 = new Role(true, true, true, true);
-        } else if (Objects.equals(role, "Viewer ")) {
-            role1 = new Role(true, false, false, false);
-        }  else if (Objects.equals(role, "Main Customer")) {
-            role1 = new Role(true, true, true, false);
-        }else if (Objects.equals(role, "Customer")) {
+            System.out.println("ROLE ADMIN");
+        } else if (Objects.equals(usersRole, CUSTOMER)) {
             role1 = new Role(true, false, true, false);
+        } else if (Objects.equals(usersRole, MAIN_CUSTOMER)) {
+            role1 = new Role(true, true, true, false);
+        } else if (Objects.equals(usersRole, VIEWER)) {
+            role1 = new Role(true, false, false, false);
         }
 
         System.out.print("Number: ");
@@ -50,11 +50,18 @@ public class TestStepOOP {
         System.out.println("Number of cart: ");
         long cartNumber = Long.parseLong(scan.nextLine());
 
+//firstUser.printInfo();
+
         try { //Task2
             firstUser.setCards(cartNumber);
-        }catch (CartException e){
+        } catch (CartException e) {
             System.err.println(e.getMessage());
         }
+
+        firstUser.printAllCard();
+
+//        Broker vroker = new Broker("1","2","5",1);
+//        vroker.printInfo();
 
 //Parent testparent = new Parent("testonme",12);
 //NewParent testNewParent = new NewParent("testMe",14);
