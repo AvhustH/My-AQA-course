@@ -12,7 +12,7 @@ public class Task4 {
 
         int i;
         for (i = 0; i < inputString.length(); i++) {
-            if (inputString.charAt(i) == inputString.toUpperCase().charAt(i)) {
+            if (inputString.charAt(i) == inputString.toUpperCase().charAt(i) && i != 0) {
                 newString = newString + " " + inputString.charAt(i);
             } else {
                 newString = newString + inputString.charAt(i);

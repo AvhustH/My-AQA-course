@@ -5,6 +5,7 @@ public class Role {
     private final boolean editAll;
     private final boolean addAll;
     private final boolean deleteAll;
+    private RoleType roleType;
 
     Role(boolean viewAll, boolean editAll, boolean addAll, boolean deleteAll) {
         this.viewAll = viewAll;
