@@ -1,8 +1,10 @@
-package oop.Step7OOP;
+package oop.Step7;
 
-import java.util.Random;
+import java.util.List;
 
-public class User {
+public class User implements PrintInfo {
+    private static int userId;
+    List<Long> allCard;
     private String firstName;
     private String lastName;
     private String fullName;
@@ -13,7 +15,6 @@ public class User {
     private long cards;
     private String role;
     private String manager;
-    private static int userId;
 
     User(String firstName, String lastName, String email, String role) {
         userId = 0;
@@ -37,7 +38,7 @@ public class User {
     @Override
     public String toString() {
         return "User{" +
-                ", firstName='" + firstName + '\'' +
+                "firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
                 ", email='" + email + '\'' +
                 ", phoneNumber='" + phoneNumber + '\'' +
@@ -45,7 +46,8 @@ public class User {
                 '}';
     }
 
-    public void printUserInfo() {
+    @Override
+    public void printInfo() {
         System.out.println(toString());
     }
 
@@ -53,28 +55,8 @@ public class User {
         return userId;
     }
 
-    public void setPhoneNumber(String phoneNumber) {
-        this.phoneNumber = phoneNumber;
-    }
-
-    public void setBillingAddress(String billingAddress) {
-        this.billingAddress = billingAddress;
-    }
-
-    public void setDeliveryAddress(String deliveryAddress) {
-        this.deliveryAddress = deliveryAddress;
-    }
-
-    public void setCards(long cards) throws CartException { //Task 1
-        double x = Math.ceil(Math.log10(cards));
-        if (x != 16) {
-            throw new CartException("Cart incorrect");
-        }
-        this.cards = cards;
-    }
-
-    public void setManager(String manager) {
-        this.manager = manager;
+    public void printAllCard() {
+        allCard.forEach(System.out::println);
     }
 
     public String getFirstName() {
@@ -97,16 +79,39 @@ public class User {
         return phoneNumber;
     }
 
+    public void setPhoneNumber(String phoneNumber) {
+        this.phoneNumber = phoneNumber;
+    }
+
     public String getBillingAddress() {
         return billingAddress;
+    }
+
+    public void setBillingAddress(String billingAddress) {
+        this.billingAddress = billingAddress;
     }
 
     public String getDeliveryAddress() {
         return deliveryAddress;
     }
 
+    public void setDeliveryAddress(String deliveryAddress) {
+        this.deliveryAddress = deliveryAddress;
+    }
+
     public long getCards() {
         return cards;
+    }
+
+    public void setCards(long cards) throws CartException { //Task 1
+        double x = Math.ceil(Math.log10(cards));
+        System.out.println(x);
+        if (x != 16) {
+            throw new CartException("Cart incorrect");
+        }
+        this.cards = cards;
+        System.out.println(cards);
+        allCard.add(cards);
     }
 
     public String getRole() {
@@ -115,6 +120,10 @@ public class User {
 
     public String getManager() {
         return manager;
+    }
+
+    public void setManager(String manager) {
+        this.manager = manager;
     }
 
 

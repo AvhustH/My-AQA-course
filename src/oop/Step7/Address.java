@@ -1,4 +1,4 @@
-package oop.Step7OOP;
+package oop.Step7;
 
 import java.util.Random;
 
@@ -11,7 +11,7 @@ public class Address {
     private int room;
     private int zip;
 
-    private Address(String country, String city, String street, String numberStreet, Integer zip) {
+    public Address(String country, String city, String street, String numberStreet, Integer zip) {
         this.country = country;
         this.city = city;
         this.street = street;

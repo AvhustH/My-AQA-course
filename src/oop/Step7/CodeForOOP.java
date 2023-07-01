@@ -1,4 +1,4 @@
-package oop.Step7OOP;
+package oop.Step7;
 
 public class CodeForOOP {
     //        Scanner sc = new Scanner(System.in);

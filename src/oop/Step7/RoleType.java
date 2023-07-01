@@ -1,4 +1,4 @@
-package oop.Step7OOP;
+package oop.Step7;
 
 public enum RoleType {
     ADMIN,

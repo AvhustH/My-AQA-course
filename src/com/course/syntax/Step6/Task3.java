@@ -1,5 +1,6 @@
 package com.course.syntax.Step6;
 
+import java.util.Objects;
 import java.util.Scanner;
 
 public class Task3 {
@@ -14,7 +15,7 @@ public class Task3 {
         int countSumbol = 0;
 
         for (char k : testArray) {
-            if (k == testArraySymbol[0]) {
+            if (Objects.equals(k, testArraySymbol[0])) {
                 countSumbol++;
             }
 
