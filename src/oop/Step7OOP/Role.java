@@ -6,7 +6,7 @@ public class Role {
     private final boolean addAll;
     private final boolean deleteAll;
 
-    Role(boolean viewAll, boolean editAll, boolean addAll, boolean deleteAll) {
+    public Role(boolean viewAll, boolean editAll, boolean addAll, boolean deleteAll) {
         this.viewAll = viewAll;
         this.editAll = editAll;
         this.addAll = addAll;

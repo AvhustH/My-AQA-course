@@ -47,7 +47,7 @@ public class Manager extends User {
     }
 
     @Override
-    public String toString() {
+    public String toStringUsers() {
         return "Manager{" +
                 "position='" + position + '\'' +
                 ", responsibilityDistrict='" + responsibilityDistrict + '\'' +
@@ -56,6 +56,6 @@ public class Manager extends User {
     }
 
     public void printManager() {
-        System.out.println(toString());
+        System.out.println(toStringUsers());
     }
 }

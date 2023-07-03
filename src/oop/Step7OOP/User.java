@@ -15,7 +15,7 @@ public class User {
     private String manager;
     private int userId;
 
-    User(String firstName, String lastName, String email, String role) {
+    public User(String firstName, String lastName, String email, String role) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.email = email;
@@ -24,7 +24,7 @@ public class User {
         this.userId = random.nextInt();
     }
 
-    User(String fullName, String email, String role) {
+    public User(String fullName, String email, String role) {
         this.fullName = fullName;
         this.email = email;
         this.role = role;
@@ -33,8 +33,19 @@ public class User {
         this.lastName = bufer[1];
     }
 
-    @Override
-    public String toString() {
+    public User(String fullName, String email) {
+        this.fullName = fullName;
+        this.email = email;
+        String[] bufer = fullName.split(" ");
+        this.firstName = bufer[0];
+        this.lastName = bufer[1];
+    }
+
+    public User(){
+
+    }
+
+    public String toStringUsers() {
         return "User{" +
                 ", firstName='" + firstName + '\'' +
                 ", lastName='" + lastName + '\'' +
@@ -45,7 +56,7 @@ public class User {
     }
 
     public void printUserInfo() {
-        System.out.println(toString());
+        System.out.println(toStringUsers());
     }
 
     public int getUserId() {
