@@ -1,10 +1,11 @@
-package oop.Step7OOP;
+package oop.Step7;
 
 public class Role {
     private final boolean viewAll;
     private final boolean editAll;
     private final boolean addAll;
     private final boolean deleteAll;
+    private RoleType roleType;
 
     Role(boolean viewAll, boolean editAll, boolean addAll, boolean deleteAll) {
         this.viewAll = viewAll;

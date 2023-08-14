@@ -1,12 +1,12 @@
-package oop.Step7OOP;
+package oop.Step7;
 
-public class Manager extends User {
+public class Manager  extends User implements PrintInfo{
 
     private String position;
     private String responsibilityDistrict;
     private String workPhoneNumber;
 
-    Manager(String firstName, String lastName, String email, String role, String position, String responsibilityDistrict,
+    public Manager(String firstName, String lastName, String email, String role, String position, String responsibilityDistrict,
             String workPhoneNumber) {
         super(firstName, lastName, email, role);
         this.position = position;
@@ -14,7 +14,7 @@ public class Manager extends User {
         this.workPhoneNumber = workPhoneNumber;
     }
 
-    Manager(String fullName, String email, String role, String position, String responsibilityDistrict,
+    public Manager(String fullName, String email, String role, String position, String responsibilityDistrict,
             String workPhoneNumber) {
         super(fullName, email, role);
         this.position = position;
@@ -54,8 +54,8 @@ public class Manager extends User {
                 ", workPhoneNumber='" + workPhoneNumber + '\'' +
                 '}';
     }
-
-    public void printManager() {
+    @Override
+    public void printInfo() {
         System.out.println(toString());
     }
 }

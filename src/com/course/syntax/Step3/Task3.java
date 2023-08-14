@@ -8,14 +8,8 @@ public class Task3 {
         Scanner scan = new Scanner(System.in);
         float number = scan.nextFloat();
         float remainder = number % 2;
-        if (remainder == 0) {
-            if (number > 10) {
+        if (remainder == 0 && number > 10 || number == 15) {
                 System.out.println(number + " це група 1");
-            } else {
-                System.out.println(number + " це група 2");
-            }
-        } else if (number == 15) {
-            System.out.println(number + " це група 1");
         } else {
             System.out.println(number + " це група 2");
         }
